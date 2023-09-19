@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <img src="images/meo1x1.jpeg" data-id = 'meo' onclick="changeImage1()" alt="" id="image-1">
+        </div>
+        <div>
+            <img src="images/panda2x1.jpeg" data-id = 'panda' onclick="changeImage2()" alt="" id="image-2">
+        </div>
+        <div>
+            <img src="images/monkey3x1.jpeg" data-id = 'monkey' onclick="changeImage3()" alt="" id="image-3">
+        </div>
+        <div>
+            <img src="images/panda4x1.jpeg" data-id = 'panda' onclick="changeImage4()" alt="" id="image-4">
+        </div>
+        <div>
+            <img src="images/meo5x1.jpeg" data-id = 'meo' onclick="changeImage5()" alt="" id="image-5">
+        </div>
+    </div>
+    <script>
+        function changeImage5() {
+            let image =  document.getElementById('image-5');
+            let typeImage = image.getAttribute('data-id');
+            if (typeImage === 'meo') {
+                image.src = "images/panda5x1.jpeg";
+                image.setAttribute('data-id', 'panda');
+            } else {
+                if (typeImage === 'panda') {
+                    image.src = "images/monkey5x1.jpeg";
+                    image.setAttribute('data-id', 'monkey')
+                } else {
+                    image.src = "images/meo5x1.jpeg";
+                    image.setAttribute('data-id', 'meo')
+                }
+            }
+            checkWin();
+        }
+
+        function changeImage4() {
+            let image =  document.getElementById('image-4');
+            let typeImage = image.getAttribute('data-id');
+            if (typeImage === 'panda') {
+                image.src = "images/monkey4x1.jpeg";
+                image.setAttribute('data-id', 'monkey');
+            } else {
+                if (typeImage === 'monkey') {
+                    image.src = "images/meo4x1.jpeg";
+                    image.setAttribute('data-id', 'meo')
+                } else {
+                    image.src = "images/panda4x1.jpeg";
+                    image.setAttribute('data-id', 'panda')
+                }
+            }
+            checkWin();
+        }
+        function changeImage3() {
+            let image =  document.getElementById('image-3');
+            let typeImage = image.getAttribute('data-id');
+            if (typeImage === 'monkey') {
+                image.src = "images/meo3x1.jpeg";
+                image.setAttribute('data-id', 'meo');
+            } else {
+                if (typeImage === 'meo') {
+                    image.src = "images/panda3x1.jpeg";
+                    image.setAttribute('data-id', 'panda')
+                } else {
+                    image.src = "images/monkey3x1.jpeg";
+                    image.setAttribute('data-id', 'monkey')
+                }
+            }
+            checkWin();
+        }
+
+        function changeImage1() {
+          let image =  document.getElementById('image-1');
+          let typeImage = image.getAttribute('data-id');
+          if (typeImage === 'meo') {
+              image.src = "images/panda1x1.jpeg";
+              image.setAttribute('data-id', 'panda');
+          } else {
+              if (typeImage === 'panda') {
+                  image.src = "images/monkey1x1.jpeg";
+                  image.setAttribute('data-id', 'monkey')
+              } else {
+                  image.src = "images/meo1x1.jpeg";
+                  image.setAttribute('data-id', 'meo')
+              }
+          }
+        checkWin();
+        }
+
+        function changeImage2() {
+            let image =  document.getElementById('image-2');
+            let typeImage = image.getAttribute('data-id');
+            if (typeImage === 'panda') {
+                image.src = "images/monkey2x1.jpeg";
+                image.setAttribute('data-id', 'monkey');
+            } else {
+                if (typeImage === 'monkey') {
+                    image.src = "images/meo2x1.jpeg";
+                    image.setAttribute('data-id', 'meo')
+                } else {
+                    image.src = "images/panda2x1.jpeg";
+                    image.setAttribute('data-id', 'panda')
+                }
+            }
+            checkWin();
+        }
+
+        function checkWin() {
+            let image1 = document.getElementById('image-1');
+            let image2 = document.getElementById('image-2');
+            let image3 = document.getElementById('image-3');
+            let image4 = document.getElementById('image-4');
+            let image5 = document.getElementById('image-5');
+            let typeImage1 = image1.getAttribute('data-id');
+            let typeImage2 = image2.getAttribute('data-id');
+            let typeImage3 = image3.getAttribute('data-id');
+            let typeImage4 = image4.getAttribute('data-id');
+            let typeImage5 = image5.getAttribute('data-id');
+
+            if (typeImage1 === typeImage2 && typeImage1 === typeImage3 && typeImage1 === typeImage4 && typeImage1 === typeImage5) {
+                image1.style.border = '3px solid blue';
+                image2.style.border = '3px solid blue';
+                image3.style.border = '3px solid blue';
+                image4.style.border = '3px solid blue';
+                image5.style.border = '3px solid blue';
+            } else {
+                image1.style.border = 'none';
+                image2.style.border = 'none';
+                image3.style.border = 'none';
+                image4.style.border = 'none';
+                image5.style.border = 'none';
+            }
+        }
+
+
+    </script>
+</body>
+</html>
